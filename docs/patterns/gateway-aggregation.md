@@ -1,8 +1,8 @@
-# Gateway Aggregation Pattern
+# Gateway Aggregation pattern
 
 Aggregate multiple individual requests to a single request using the gateway aggregation pattern. This pattern is useful when a client must make multiple calls to different backend systems to perform an operation.
 
-## Context and Problem
+## Context and problem
 
 In order to perform a single task, a client may have to make multiple calls to various backend services. An application that relies on many services to perform a task must expend resources on each request to those back-end services. When any new feature or service is added to the application, additional requests are needed, further increasing resource requirements and calls across a network. The increasing use of microservice architectures has made these problems much more common, as applications built around many smaller services naturally have a higher amount of cross-service calls. 
 
@@ -27,7 +27,7 @@ request contains a package of additional requests that the gateway decomposes fr
 
 In the above example, the application needs to make only a single request and receive only a single response from the gateway. Introduction of the gateway aggregator reduces chattiness and improves performance of the application.
 
-## Issues and Considerations
+## Issues and considerations
 
 - The gateway should not introduce service coupling across the backend services.
 - The gateway should be located near the backend services to reduce latency as much as possible.
@@ -42,7 +42,7 @@ In the above example, the application needs to make only a single request and re
 - Consider returning cached data as a failover strategy to handle failures.
 - Consider an aggregation service behind a gateway. Request aggregation will likely have different resource requirements than other services in the gateway and may impact routing and offload functionality.
 
-## When to Use this Pattern
+## When to use this pattern
 
 Use this pattern when:
 
@@ -55,6 +55,7 @@ This pattern may not be suitable when:
 - The client or application is located near the backend services and latency is not a significant factor.
 
 ## Example
+
 The following example illustrates how to create a simple a gateway aggregation NGINX service using Lua:
 
 ```lua
@@ -108,8 +109,7 @@ http {
 
 ## Related guidance
 
-Gateway Router Pattern
-Gateway Offload Pattern
-Backend for Frontend Pattern
-
+- [Gateway Router pattern](./gateway-router.md)
+- [Gateway Offload pattern](./gateway-offload.md)
+- [Backends for Frontends pattern][./backends-for-frontends.md]
 

@@ -1,8 +1,8 @@
-# Anti-Corruption Layer
+# Anti-Corruption Layer pattern
 
 Use an Anti-Corruption Layer pattern to ensure the design and structure of new apps and services are not limited by legacy resources they may still depend on. This pattern implements a façade or adapter layer in between legacy systems and modern systems where features and capabilities are being migrated to. This façade or layer translates requests between modern systems and legacy application using methods appropriate to each. 
 
-## Context and Problem
+## Context and problem
 
 Most applications rely on other systems for some data or functionality. For example, when migrating an application from a legacy to modern system, there may be existing legacy resources that are still needed by the modern application. New features need to support making requests to a legacy system, while also maintaining their ability to call resources within a modern system. This is especially true of gradual migrations, where different features of a larger application are moved to a modern system over time.
 
@@ -18,7 +18,7 @@ Isolate the legacy and modern systems by placing an Anti-Corruption layer betwee
 
 Communication between the modern applications and the anti-corruption layer will always be using the modern data model or architecture. Calls to the legacy application made from the anti-corruption layer are all consistent with the legacy data model or methods. The layer contains all of the logic necessary to translate between the two systems.
 
-## Issues and Considerations
+## Issues and considerations
 
 - Implementing an anti-corruption layer may add latency to calls made between the legacy and modern applications
 - Note that adding an anti-corruption layer adds an additional service/application that needs to be managed and maintained.
@@ -30,16 +30,14 @@ Communication between the modern applications and the anti-corruption layer will
 - Is the anti-corruption layer meant to be permanent, or is it meant to be retired once all legacy functionality Is migrated?
 - Will the anti-corruption layer be implemented as a library/component, or as an independent service?
 
-## When to Use this Pattern
+## When to use this pattern
 
 Use this pattern when:
 
 - When a migration is planned to happen over multiple stages, but integration between new and legacy systems needs to be maintained.
 - When new and legacy system have different semantics, but still need to communicate.
 
-This pattern may not be suitable:
-
-- When there’s no significant differences in semantics between new and legacy systems. 
+This pattern may not be suitable if there are no significant differences in semantics between new and legacy systems. 
 
 ## Related guidance
 

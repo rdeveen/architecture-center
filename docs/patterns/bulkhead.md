@@ -1,8 +1,8 @@
-# Bulkhead Pattern
+# Bulkhead pattern
 
 Isolate the elements of an application like the sectioned partitions of a ship's hull. If the hull of a ship that uses bulkheads is compromised, only the damaged section of the ship will fill with water, and the ship will not sink. Using the same concept in application design, this pattern isolates instances of a service or clients into pools so that if one fails, the others will continue to function.
 
-## Context and Problem
+## Context and problem
 
 An application that is deployed in the cloud may provide multiple consumers and services as part of a complete solution, with each service having one or more reliant consumers. Excessive load or failure in an application or service will impact all consumers of the service.
 
@@ -16,7 +16,7 @@ Isolate failures by implementing the bulkhead pattern. Partition service instanc
 
 A consumer calling multiple services can also partition resources in order to ensure the resources used to call one service are not affecting the resources used to call another service. For example, a consumer that calls multiple services may be assigned a connection pool for each service being contacted. A service that begins to fault only affects the connection pool assigned to the consumer for that service, allowing the consumer to continue using the other services without issue.
 
-The benefits of implementing this pattern are:
+The benefits of this pattern include:
 
 - Isolates consumers and services from cascading failures. An issue affecting a consumer or service can be isolated within its own bulkhead, preventing the entire solution from failing if a single consumer or service goes rogue.
 - Allows you to preserve some functionality in the event of a service failure. Other services and features of the application will continue to work, even in the event of a service failure or a consumer exhausting its resources.
@@ -80,10 +80,8 @@ spec:
 
 ## Related guidance
 
-Timeouts
-Retry Pattern
-Circuit Breaker Pattern
-Resiliency Guidance
-Throttling Pattern
-Data Partitioning Guidance
+- [Designing resilient applications for Azure](../resiliency/index.md)
+- [Circuit Breaker pattern](./circuit-breaker.md)
+- [Retry pattern](./retry.md)
+- [Throttling pattern](./throttling.md)
 
