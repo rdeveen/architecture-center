@@ -49,7 +49,7 @@ This pattern may not be suitable:
 
 ## Related guidance
 
-- [Gateway Router pattern](./gateway-router.md)
+- [Gateway Routing pattern](./gateway-routing.md)
 - [Gateway Offload pattern](./gateway-offload.md)
 - [Gateway Aggregation pattern](./gateway-offload.md)
 

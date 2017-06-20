@@ -109,7 +109,7 @@ http {
 
 ## Related guidance
 
-- [Gateway Router pattern](./gateway-router.md)
+- [Gateway Routing pattern](./gateway-routing.md)
 - [Gateway Offload pattern](./gateway-offload.md)
 - [Backends for Frontends pattern][./backends-for-frontends.md]
 
