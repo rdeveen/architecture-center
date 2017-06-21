@@ -22,3 +22,7 @@ Security is the capability of a system to prevent malicious or accidental action
 | [Federated Identity](../federated-identity.md) | Delegate authentication to an external identity provider. |
 | [Gatekeeper](../gatekeeper.md) | Protect applications and services by using a dedicated host instance that acts as a broker between clients and the application or service, validates and sanitizes requests, and passes requests and data between them. |
 | [Valet Key](../valet-key.md) | Use a token or key that provides clients with restricted direct access to a specific resource or service. |
+| [Multi-Factor Authentication](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authenticationd) | Two-step verification is a method of authentication that requires more than one verification method and adds a critical second layer of security to user sign-ins and transactions. It works by requiring any two or more of the following verification methods:
+* Something you know (typically a password)
+* Something you have (a trusted device that is not easily duplicated, like a phone)
+* Something you are (biometrics) |
